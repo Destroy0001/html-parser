@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic REST api that parses and stores all h3,h2,h1, and links on a url. 
 
-Things you may want to cover:
+Endpoints: 
+  * `POST /parse` with form param or query param `url` parses the url's html. 
+  * `GET /show` returns a json response with all stored urls data
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You need install mongoDB, ruby 2.3.*, rails 5.0.2 to start using the application

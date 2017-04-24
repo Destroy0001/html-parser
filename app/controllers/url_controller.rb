@@ -1,14 +1,20 @@
-require 'open-uri'
 class UrlController < ApplicationController
+  include ParseHelper
+  
+  #parses a url and stores it to database
   def parse
     url = params[:url]
-    html = Nokogiri::HTML(open(url))
-    h1List = html.css('h1').each{|h1| print h1}
-    h2List = html.css('h2').each{|h2| print h2}
-    h3List = html.css('h3').each{|h3| print h3}
+    print url
+    if not url
+      return badRequest()
+    end
+
+    parseUrl(url)
   end
 
+  #shows all stored urls
   def show
-
+    showUrl()
   end
+
 end
